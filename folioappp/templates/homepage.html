@@ -79,7 +79,6 @@
         <ul id="portfolio-flters">
           <li data-filter="*" class="filter-active">All</li>
           <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
           <li data-filter=".filter-web">Web</li>
         </ul>
       </div>
@@ -88,22 +87,23 @@
     <div class="row portfolio-container">
 
       {% for project in projects %}
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
         <div class="portfolio-wrap">
-          <img src="{{ project.image.url}}" alt="{{project.title}}" class="img-fluid" >
+          <img src="{{ project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
           <div class="portfolio-info">
-            <h4>{{ project.tittle }}</h4>
+            <h4>{{ project.title }}</h4>
             <p>{{ project.category }}</p>
             <div class="portfolio-links">
               <a href="{{ project.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.title}}"><i class="bx bx-plus"></i></a>
-              <a href="{% url 'portfolio_details' portfolio_id=1 %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio_details' portfolio_id=1 %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+
             </div>
           </div>
         </div>
       </div>
       {%endfor%}
   
-    </div>
+
 
   </div>
 </section><!-- End Portfolio Section -->

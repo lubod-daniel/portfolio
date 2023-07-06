@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect, get_object_or_404
 from .models import *
 from django.core.mail import send_mail
 from .forms import VisitorMessageForm
-
+from django.http import Http404
 
 # Create your views here.
 
@@ -20,25 +20,12 @@ def homepage(rqt):
     }
     return render(rqt, 'homepage.html', context)
 
-
-"""def project_detail(rqt, pk):
-    pk=1
-    project_obj= project.objects.get(pk=pk)
-    context = {
-        'project': project_obj
-    }
-    return render(rqt, 'project-detail.html', context)"""
-
 def portfolio_details(request, portfolio_id):
     portfolio_id=1
-    # Retrieve the portfolio object using the provided portfolio_id
     portfolio = get_object_or_404(project, pk=portfolio_id)
-    
-    # Pass the portfolio object to the template
     context = {'portfolio': portfolio}
     
     return render(request, 'portfolio_details.html', context)
-
     
 def send_email(request):
     recipient_email = 'daniel-lubod@outlook.com'
