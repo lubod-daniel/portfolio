@@ -1,21 +1,39 @@
+{% extends "basee.html" %}
+{% load static %}
 
+{%block tit%}
+<title>Thank You!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+{%endblock%}
 
+{%block portfolio_details%}
+<div class="about-me container">
 
-
-
-<!-- thank_you_modal.html -->
-<div class="modal fade" id="thankYouModal" tabindex="-1" role="dialog" aria-labelledby="thankYouModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="thankYouModalLabel">Thank You!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Thank you for leaving your message. We will get back to you soon.</p>
-            </div>
-        </div>
+    <div class="section-title mt-5">
+      <h2>Thank You</h2>
+      <p>We appreciate your message <i class="bi bi-emoji-smile"></i></p>
     </div>
-</div>
+
+    <div class="mb-5">
+        <p>Message delivered. Thank you for your time.</p>
+    </div>
+
+    <div>
+        <a href="{% url 'homepage' %}"><button class="btn btn-success">Home</button></a>
+    </div>
+
+
+  
+
+
+
+    
+  </div><!-- End -->
+{%endblock%}
+
+
+
+
+
+

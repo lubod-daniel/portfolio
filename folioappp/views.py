@@ -41,7 +41,7 @@ def leave_message(request):
         form = VisitorMessageForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'message.html', {'form': form, 'show_modal': True})  # Redirect to a thank you page
+            return render(request, 'thanks.html', {'form': form, 'show_modal': True})  # Redirect to a thank you page
     else:
         form = VisitorMessageForm()
     
