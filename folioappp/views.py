@@ -11,11 +11,13 @@ def homepage(rqt):
     qualifications=qualification.objects.all()
     employments = employment.objects.all()
     professional_courses=professional_course.objects.all()
+    visitormessage=VisitorMessage.objects.all()
     context = {
         'projects': projects,
         'qualifications':qualifications,
         'employments': employments,
         'professional_courses':professional_courses,
+        'visitormessage':visitormessage,
         
     }
     return render(rqt, 'homepage.html', context)
@@ -50,3 +52,10 @@ def leave_message(request):
     
 def thanks_page(request):
     return render(request, 'thanks.html')
+
+def all_messages(rqt):
+    messages = VisitorMessage.objects.all()
+    context = {
+        'messages': messages,    
+     }
+    return render(rqt, 'all_messages.html', context)

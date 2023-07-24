@@ -8,4 +8,5 @@ urlpatterns = [
     path('send_email/', views.send_email, name='send_email'),
     path('leave-message/', views.leave_message, name='leave_message'),
     path('leave-message/thanks.html', views.thanks_page, name='thanks_page'),
+    path('all_message/', views.all_messages, name='all_messages'),
 ]
