@@ -3,7 +3,7 @@
 
 
 {%block tit%}
-<title>Messages</title>
+<title>Testimonials</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 {%endblock%}
@@ -17,15 +17,17 @@
     </div>
 
     <div class="row">
-        <h2 class="resume-title text-center mb-4">ALL MESSAGES</h2>
-        {% for message in messages %}
+        <h2 class="resume-title text-center mb-4">ALL TESTIMONIALS</h2>
+        {% for testimonial in testimonials %}
         <div class="col-lg-4">
           <div class="resume-item mb-5">
-            <h5><i class="bi bi-envelope-fill"></i> Message</h5>
-            <p>Name: {{ message.name }}</p>
-            <p>Message: {{ message.message }}</p>
-            <p>Email: <a href="mailto:{{ message.email}}?subject=Thank%20You%20">{{ message.email }}</a></p>
-            <p>Date: <em>{{ message.timestamp }}</em></p>
+            <h5><i class="bi bi-envelope-fill"></i> Testimonial</h5>
+            <p>Name: {{ testimonial.name }}</p>
+            <p>remark: {{ testimonial.remark }}</p>
+            {%if testimonial.picture%}
+            <p>picture: </p><img src="{{ testimonial.picture.url}}" class="testimonial-img" alt="{{testimonial.name}}" style="width:200px; height:100px;">
+            {%endif%}
+            <p>company: <em>{{ testimonial.position }} at {{ testimonial.organization}}</em></p>
           </div>
         </div>
         {%endfor%}

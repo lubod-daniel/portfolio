@@ -8,3 +8,6 @@ class TimePickerInput(forms.TimeInput):
 
 class DateTimePickerInput(forms.DateTimeInput):
         input_type = 'datetime'
+
+class FileInput(forms.FileInput):
+        input_type = 'file'

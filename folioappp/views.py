@@ -6,22 +6,22 @@ from django.http import Http404
 
 # Create your views here.
 
-def homepage(rqt):
+def homepage(request):
     projects = project.objects.all()
     qualifications=qualification.objects.all()
     employments = employment.objects.all()
     professional_courses=professional_course.objects.all()
-    visitormessage=VisitorMessage.objects.all()
+    testimonials = testimonial.objects.all()
+    
     context = {
         'projects': projects,
         'qualifications':qualifications,
         'employments': employments,
         'professional_courses':professional_courses,
-        'visitormessage':visitormessage,
-        
+        'testimonials': testimonials,  
     }
-    return render(rqt, 'homepage.html', context)
-
+    return render(request, 'homepage.html', context)
+    
 def portfolio_details(request, portfolio_id):
     portfolio_id=1
     portfolio = get_object_or_404(project, pk=portfolio_id)
@@ -42,16 +42,19 @@ def leave_message(request):
     if request.method == 'POST':
         form = VisitorMessageForm(request.POST)
         if form.is_valid():
-            form.save()
-            return render(request, 'thanks.html', {'form': form, 'show_modal': True})  # Redirect to a thank you page
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            # Save the message to the database
+            visitor_message = VisitorMessage(name=name, email=email, message=message)
+            visitor_message.save()
+
+            return redirect('thanks_page')  # Redirect to "thanks.html" page after successful submission
     else:
         form = VisitorMessageForm()
-    
-    return render(request, 'message.html', {'form': form, 'show_modal': False})
 
-    
-def thanks_page(request):
-    return render(request, 'thanks.html')
+    return render(request, 'message.html', {'form': form})
 
 def all_messages(rqt):
     messages = VisitorMessage.objects.all()
@@ -59,3 +62,25 @@ def all_messages(rqt):
         'messages': messages,    
      }
     return render(rqt, 'all_messages.html', context)
+
+#def add_testimonial(request):
+    if request.method == 'POST':
+        form = testimonialform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('homepage')
+    else:
+        form = testimonialform()
+
+    return render(request, 'add_testimonial.html', {'form': form})
+
+#def all_testimonials(rqt):
+    testimonials = testimonial.objects.all()
+    context = {
+        'testimonials': testimonials,    
+     }
+    return render(rqt, 'all_testimonials.html', context)
+
+    
+def thanks_page(request):
+    return render(request, 'thanks.html')
