@@ -12,22 +12,28 @@ def homepage(request):
     employments = employment.objects.all()
     professional_courses=professional_course.objects.all()
     testimonials = testimonial.objects.all()
+    count=projects.count
     
     context = {
         'projects': projects,
         'qualifications':qualifications,
         'employments': employments,
         'professional_courses':professional_courses,
-        'testimonials': testimonials,  
+        'testimonials': testimonials,
+        'count': count 
     }
     return render(request, 'homepage.html', context)
     
 def portfolio_details(request, portfolio_id):
     portfolio_id=1
     portfolio = get_object_or_404(project, pk=portfolio_id)
-    context = {'portfolio': portfolio}
-    
-    return render(request, 'portfolio_details.html', context)
+    try:
+        selected_project=project.objects.get(portfolio_id=1)
+        context = {'portfolio': portfolio,
+                   'project':selected_project,}
+        return render(request, 'portfolio_details.html', context)
+    except Exception as exc:
+        return render(request, 'portfolio_details.html')
     
 def send_email(request):
     recipient_email = 'daniel-lubod@outlook.com'
