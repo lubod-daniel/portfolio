@@ -24,20 +24,19 @@ def homepage(request):
     }
     return render(request, 'homepage.html', context)
     
-def portfolio_details(request, portfolio_id):
-    portfolio_id=1
-    portfolio = get_object_or_404(project, pk=portfolio_id)
-    try:
-        selected_project=project.objects.get(portfolio_id=1)
-        context = {'portfolio': portfolio,
-                   'project':selected_project,}
-        return render(request, 'portfolio_details.html', context)
-    except Exception as exc:
-        return render(request, 'portfolio_details.html')
+def portfolio_details(request, project_id):
+    portfolio = get_object_or_404(project, pk=project_id)
+    selected_project=project.objects.get(pk=project_id)
+    pictures=more_image.objects.filter(project=portfolio)
+    context = {'portfolio': portfolio,
+               'selected_project' : selected_project,
+                'pictures': pictures
+                }
+    return render(request, 'portfolio_details.html', context)
     
 def send_email(request):
     recipient_email = 'daniel-lubod@outlook.com'
-    subject = 'Hello World'
+    subject = 'Hello Daniel'
     body = 'This is the body of the email'
 
     mailto_link = f"mailto:{recipient_email}?subject={subject}&body={body}"

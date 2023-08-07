@@ -8,6 +8,7 @@ class folioadmin (admin.ModelAdmin):
    prepopulated_fields={'slug':('title',)}
 admin.site.register(project)
 admin.site.register(image)
+admin.site.register(more_image)
 admin.site.register(employment)
 admin.site.register(qualification)
 admin.site.register(professional_course)

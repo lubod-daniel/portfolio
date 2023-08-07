@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+class more_image(models.Model):
+    picture=models.ImageField(upload_to='images/')
 
 class project(models.Model):
     title=models.CharField(max_length=100)
@@ -9,6 +11,7 @@ class project(models.Model):
     category=models.CharField(max_length=50)
     url=models.URLField(max_length=200)
     image=models.ImageField(upload_to='images')
+    pictures=models.ManyToManyField(more_image)
     def __str__(self):
         return f'{self.title}'
     
