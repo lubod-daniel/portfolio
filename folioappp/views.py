@@ -26,11 +26,11 @@ def homepage(request):
     
 def portfolio_details(request, project_id):
     portfolio = get_object_or_404(project, pk=project_id)
-    selected_project=project.objects.get(pk=project_id)
     pictures=more_image.objects.filter(project=portfolio)
+
     context = {'portfolio': portfolio,
-               'selected_project' : selected_project,
-                'pictures': pictures
+               'pictures': pictures,
+
                 }
     return render(request, 'portfolio_details.html', context)
     
