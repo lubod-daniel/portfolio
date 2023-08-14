@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block testimonials%}
+{%endblock%}
+
+{%block resume%}
+<section id="resume" class="resume">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Resume</h2>
+      <p>Check My Resume</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="resume-title">Education</h3>
+        {% for qualification in qualifications %}
+        <div class="resume-item">
+          <h4>{{ qualification.bag }}</h4>
+          <h5>{{ qualification.year }}</h5>
+          <p><em>{{ qualification.institution }}</em></p>
+          <p>{{ qualification.about }}</p>
+        </div>
+        {%endfor%}
+        
+        <h3 class="resume-title">Professional Qualification</h3>
+        {%for professional_course in professional_courses %}
+        <div class="resume-item">
+          <h4>{{ professional_course.bag }}</h4>
+          <h5>{{ professional_course.year }}</h5>
+          <p><em>{{ professional_course.institution }}</em></p>
+          <p>
+            <ul>
+              {% for skill in professional_course.skill.all%}
+              <li>{{ skill.skill_acquired }}</li>
+              {%endfor%}
+            </ul>
+          </p>
+        </div>
+        {%endfor%}
+      </div>
+      <div class="col-lg-6">
+        <h3 class="resume-title">Professional Experience</h3>
+        {%for employment in employments%}
+        <div class="resume-item">
+          <h4>{{ employment.designation }}</h4>
+          <h5>{{ employment.start_date }} - {{ employment.end_date }}</h5>
+          <p><em>{{ employment.employer }} - {{ employment.employer_address }}</em></p>
+          <p>
+            <ul>
+              {% for responsibility in employment.responsibility.all %}
+              <li>{{ responsibility.duty }}</li>
+              {%endfor%}
+            </ul>
+          </p>
+        </div>
+        {%endfor%}
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Resume Section -->
+{%endblock%}
+
+{% block folio %}
+<section id="portfolio" class="portfolio">
+  <div class="container">
+
+    <div class="section-title">
+      <h2><a href="{% url 'all_messages' %}" style="color:darkgray">Portfolio</a></h2>
+      <p>My Works</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-app">App</li>
+          <li data-filter=".filter-web">Web</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row portfolio-container">
+
+      {% for project in projects %}
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="{{ project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
+          <div class="portfolio-info">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.category }}</p>
+            <div class="portfolio-links">
+              <a href="{{ project.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.title}}"><i class="bx bx-plus"></i></a>
+              <a href="{% url 'portfolio_details' project.id %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+  
+
+
+  </div>
+</section><!-- End Portfolio Section -->
+{% endblock %} 
