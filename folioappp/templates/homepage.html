@@ -96,6 +96,7 @@
             <div class="portfolio-links">
               <a href="{{ project.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.title}}"><i class="bx bx-plus"></i></a>
               <a href="{% url 'portfolio_details' project.id %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              <a href="{% url 'portfolio_details' project_id=0 %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
 
             </div>
           </div>

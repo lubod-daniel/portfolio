@@ -24,6 +24,19 @@ class Migration(migrations.Migration):
                 ('responsibility', models.TextField()),
             ],
         ),
+<<<<<<< HEAD
+=======
+        migrations.CreateModel(
+            name='image',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('img', models.ImageField(null=True, upload_to='images')),
+                ('img1', models.ImageField(null=True, upload_to='images')),
+                ('img2', models.ImageField(null=True, upload_to='images')),
+                ('img3', models.ImageField(null=True, upload_to='images')),
+            ],
+        ),
+>>>>>>> origin/master
 
         migrations.CreateModel(
             name='project',

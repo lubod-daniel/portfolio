@@ -12,6 +12,8 @@ class more_image(models.Model):
     identifier=models.ForeignKey(identifier, on_delete=models.CASCADE, null=True, blank=False)
     def __str__(self):
         return f'{self.title}'
+class more_image(models.Model):
+    picture=models.ImageField(upload_to='images/')
 
 class project(models.Model):
     title=models.CharField(max_length=100)
@@ -24,6 +26,14 @@ class project(models.Model):
     pictures=models.ManyToManyField(more_image)
     def __str__(self):
         return f'{self.title}'
+    
+class image(models.Model):
+    img=models.ImageField(upload_to='images', blank=True, null=True)
+    img1=models.ImageField(upload_to='images', blank=True, null=True)
+    img2=models.ImageField(upload_to='images', blank=True, null=True)
+    img3=models.ImageField(upload_to='images',blank=True, null=True)
+    def __str__(self):
+        return f'{self.img}'
     
 class responsibility(models.Model):
     duty=models.CharField(max_length=200)
