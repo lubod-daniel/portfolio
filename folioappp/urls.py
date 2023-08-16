@@ -9,6 +9,9 @@ urlpatterns = [
     path('leave-message/', views.leave_message, name='leave_message'),
     path('leave-message/thanks.html', views.thanks_page, name='thanks_page'),
     path('all_message/', views.all_messages, name='all_messages'),
+    path('download/<str:filename>', views.download_file, name='download'),
+
+    
     #path('add_testimonial/', views.add_testimonial, name='add_testimonial'),
     #path('all_testimonial/', views.all_testimonials, name='all_testimonials'),
 ]

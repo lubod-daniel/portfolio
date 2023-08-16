@@ -40,7 +40,20 @@
           </p>
         </div>
         {%endfor%}
+
+        <div class="resume-item">
+          <h4>DOWNLOAD FILE</h4>
+          <p>
+            <ul>
+              <li><a href="{% url 'download' filename='Olubode_Daniel_Busayo_Acc.pdf' %}" download class="btn btn-info">Download Resume as Accountant</a></li>
+              <li><a href="{% url 'download' filename='Olubode_Daniel_Busayo_Dev.pdf' %}" download class="btn btn-info">Download Resume as Developer</a></li>
+
+            </ul>
+          </p>
+        </div>
+
       </div>
+
       <div class="col-lg-6">
         <h3 class="resume-title">Professional Experience</h3>
         {%for employment in employments%}

@@ -25,10 +25,14 @@
                 <ul>
                     <li><strong>Category</strong>: {{ portfolio.category }}</li>
                     <li><strong>Technology</strong>: {{ portfolio.technology }}</li>
-                    <li><strong>Project URL</strong>: <a href="{{ portfolio.url }}">{{ portfolio.url }}</a></li>
+                    <li><strong>Project URL</strong>: <a href="{{ portfolio.url }}" target="_blank">{{ portfolio.url }}</a></li>
                 </ul>
 
                 <p>{{ portfolio.description }}</p>
+
+                <div class="mt-5">
+                    <a href="{% url 'homepage' %}"><button class="btn btn-success">Home</button></a>
+                </div>
             </div>
         </div>
     </div>
