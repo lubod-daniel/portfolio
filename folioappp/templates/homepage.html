@@ -100,9 +100,9 @@
     <div class="row portfolio-container">
 
       {% for project in projects %}
-      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
         <div class="portfolio-wrap">
-          <img src="{{ project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
+          <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
           <div class="portfolio-info">
             <h4>{{ project.title }}</h4>
             <p>{{ project.category }}</p>
@@ -114,6 +114,7 @@
         </div>
       </div>
       {%endfor%}
+      </div>
   
 
 
