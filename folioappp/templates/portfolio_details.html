@@ -23,7 +23,11 @@
             <div class="col-lg-4 portfolio-info">
                 <h3>Project information</h3>
                 <ul>
-                    <li><strong>Category</strong>: {{ portfolio.category }}</li>
+                    {%if portfolio.categoryweb%}
+                    <li><strong>Category</strong>: {{ portfolio.categoryweb }}</li>
+                    {%else%}
+                    <li><strong>Category</strong>: {{ portfolio.categoryapp }}</li>
+                    {%endif%}
                     <li><strong>Technology</strong>: {{ portfolio.technology }}</li>
                     <li><strong>Project URL</strong>: <a href="{{ portfolio.url }}" target="_blank">{{ portfolio.url }}</a></li>
                 </ul>

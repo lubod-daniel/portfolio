@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import environs
 import dj_database_url
+from storages.backends.azure_storage import AzureStorage
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +29,6 @@ SECRET_KEY = 'django-insecure-2el614$y#$a1&f$s46dps!2jcqqfo4%!*216n-!vz+f9vl%e2f
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -79,18 +79,18 @@ WSGI_APPLICATION = 'folioproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}"""
 
-"""env=environs.Env()
+env=environs.Env()
 environs.Env.read_env()
 DATABASES = {
         'default':dj_database_url.parse(env('DATABASE_URL'))
-    }"""
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -137,3 +137,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
+"""AZURE_ACCOUNT_NAME = 'busayofolio'
+AZURE_ACCOUNT_KEY = 'L8NjjSOch7j9jxtH/EtIjoUlQ9rIn/pxRG8mUgTSTNSAGFzX//7fsqUyxAx40wTA9rzOJtW8+fO9+ASt0w+Q7w=='
+AZURE_CONTAINER = 'busayofolio'
+
+# Use Azure Blob Storage for static files
+STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER}/'"""

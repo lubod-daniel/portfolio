@@ -91,8 +91,8 @@
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="portfolio-flters">
           <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
           <li data-filter=".filter-web">Web</li>
+          <li data-filter=".filter-app">App</li>
         </ul>
       </div>
     </div>
@@ -100,19 +100,36 @@
     <div class="row portfolio-container">
 
       {% for project in projects %}
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="portfolio-wrap">
-          <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
-          <div class="portfolio-info">
-            <h4>{{ project.title }}</h4>
-            <p>{{ project.category }}</p>
-            <div class="portfolio-links">
-              <a href="{{ project.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.title}}"><i class="bx bx-plus"></i></a>
-              <a href="{% url 'portfolio_details' project.id %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+        {%if project.categoryweb%}
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
+            <div class="portfolio-info">
+              <h4>{{ project.title }}</h4>
+              <p>{{ project.categoryweb }}</p>
+              <div class="portfolio-links">
+                <a href="{{ project.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.title}}"><i class="bx bx-plus"></i></a>
+                <a href="{% url 'portfolio_details' project.id %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        {%else%}
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
+            <div class="portfolio-info">
+              <h4>{{ project.title }}</h4>
+              <p>{{ project.categoryapp }}</p>
+              <div class="portfolio-links">
+                <a href="{{ project.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{project.title}}"><i class="bx bx-plus"></i></a>
+                <a href="{% url 'portfolio_details' project.id %}" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+
       {%endfor%}
       </div>
   
