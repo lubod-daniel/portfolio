@@ -137,4 +137,45 @@
 
   </div>
 </section><!-- End Portfolio Section -->
-{% endblock %} 
+{% endblock %}
+
+{%block testi%}
+<section id="testimonial" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Testimonials</h2>
+      <p>people's review</p>
+    </div>
+    <div class="testimonials container">
+
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+          {%for testimonial in testimonials%}
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{testimonial.remark}}
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+              <img src="{% static 'folio/img/anonymus.jpg'%}" class="testimonial-img" alt="">
+              <h3>{{testimonial.name}}</h3>
+              <h4>{{testimonial.position}} at {{testimonial.organization}} </h4>
+            </div>
+          </div><!-- End testimonial item -->
+          {%endfor%}
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="owl-carousel testimonials-carousel">
+
+      </div>
+
+    </div><!-- End Testimonials  -->
+  </div>
+</section>
+{%endblock%}

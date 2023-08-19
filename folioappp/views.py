@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404, HttpResponse
 from .models import *
 from django.core.mail import send_mail
-from .forms import VisitorMessageForm
+from .forms import VisitorMessageForm, TestimonialForm
 from django.http import Http404, FileResponse
 from django.conf import settings
 import os
@@ -71,14 +71,22 @@ def all_messages(rqt):
      }
     return render(rqt, 'all_messages.html', context)
 
-#def add_testimonial(request):
+def add_testimonial(request):
     if request.method == 'POST':
-        form = testimonialform(request.POST)
+        form = TestimonialForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('homepage')
+            remark = form.cleaned_data['remark']
+            name = form.cleaned_data['name']
+            position = form.cleaned_data['position']
+            organization = form.cleaned_data['organization']
+
+            # Save the message to the database
+            testimonial_mes = testimonial(remark=remark, name=name, position=position, organization=organization,)
+            testimonial_mes.save()
+
+            return redirect('appreciation_page')
     else:
-        form = testimonialform()
+        form = TestimonialForm()
 
     return render(request, 'add_testimonial.html', {'form': form})
 
@@ -92,6 +100,9 @@ def all_messages(rqt):
     
 def thanks_page(request):
     return render(request, 'thanks.html')
+
+def appreciation_page(request):
+    return render(request, 'appreciation.html')
 
 def download_file(request, filename=''):
     if filename != '':

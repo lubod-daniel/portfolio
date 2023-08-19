@@ -32,22 +32,17 @@ class VisitorMessageForm(forms.ModelForm):
 
         }
 
-"""class testimonialform(forms.ModelForm):
+class TestimonialForm(forms.ModelForm):
     class Meta:
         model = testimonial
-        fields = ['remark', 'picture', 'name', 'position', 'organization']
+        fields = ['remark', 'name', 'position', 'organization']
         widgets = {
-            'remark':Textarea(
-                attrs={
-                    "placeholder": "Type your message",
+            'remark' : Textarea(
+            attrs={
+                    "placeholder": "Type your remark",
                      "class":"form-control"
                 }
-            ),
-            'picture':FileInput(
-                attrs={
-                    "placeholder": "upload a photo",
-                     "class":"form-control"
-                }
+            
             ),
             'name' : TextInput(
             attrs={
@@ -56,12 +51,11 @@ class VisitorMessageForm(forms.ModelForm):
                 }
             
             ),
-            'position' : TextInput(
-            attrs={
-                    
+            'position':TextInput(
+                attrs={
+
                      "class":"form-control"
                 }
-            
             ),
             'organization' : TextInput(
             attrs={
@@ -71,12 +65,4 @@ class VisitorMessageForm(forms.ModelForm):
             
             ),
 
-
-        }"""
-
-"""class testimonialform(forms.Form):
-    remark=forms.CharField(max_length=300)
-    picture=forms.FileField()
-    name=forms.CharField(max_length=100)
-    position=forms.CharField(max_length=100)
-    organization=forms.CharField(max_length=100)"""
+        }

@@ -1,0 +1,29 @@
+{% extends "basee.html" %}
+{% load static %}
+
+{%block tit%}
+<title>Thank You!</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+{%endblock%}
+
+{%block portfolio_details%}
+<div class="about-me container">
+
+    <div class="section-title mt-5">
+      <h2>Thank You</h2>
+      <p>We appreciate your review <i class="bi bi-emoji-smile"></i></p>
+    </div>
+
+    <div class="mb-5">
+        <p>Review Uploaded. Thank you for your time.</p>
+    </div>
+
+    <div>
+        <a href="{% url 'homepage' %}"><button class="btn btn-success">Home</button></a>
+    </div>
+
+
+
+  </div><!-- End -->
+  {%endblock%}

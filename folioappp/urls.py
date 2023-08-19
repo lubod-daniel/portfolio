@@ -11,7 +11,7 @@ urlpatterns = [
     path('all_message/', views.all_messages, name='all_messages'),
     path('download/<str:filename>', views.download_file, name='download'),
 
-    
-    #path('add_testimonial/', views.add_testimonial, name='add_testimonial'),
+    path('add_testimonial/appreciation.html', views.appreciation_page, name='appreciation_page'),
+    path('add_testimonial/', views.add_testimonial, name='add_testimonial'),
     #path('all_testimonial/', views.all_testimonials, name='all_testimonials'),
 ]
