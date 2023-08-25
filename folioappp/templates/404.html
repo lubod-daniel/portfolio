@@ -1,0 +1,25 @@
+{%extends 'basee.html'%}
+{%load static%}
+
+{%block tit%}
+<title>Page Not Found | Busayo's Folio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+{%endblock%}
+
+
+{%block portfolio_details%}
+<header id="header">
+    <div class="container">
+
+        <h1 class="mb-3">There's nothing here</h1>
+        <p class="mb-4">Looks like you hit the wrong page. <br class="mb-5"> Go back home by clicking "Home" below.</p>
+
+        <div class="mt-5">
+            <a href="{% url 'homepage' %}"><button class="btn btn-success">Home</button></a>
+        </div>
+
+
+    </div>
+  </header>
+{%endblock%}

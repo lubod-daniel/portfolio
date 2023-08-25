@@ -1,6 +1,28 @@
 from django.db import models
+from azure.storage.blob import BlobServiceClient, ContentSettings
+from django.conf import settings
+from storages.backends.azure_storage import AzureStorage
 
 # Create your models here.
+class AzureBlobImageField(models.ImageField):
+    def upload_to_azure(self, instance, filename):
+        blob_service_client = BlobServiceClient(account_url=f"https://{settings.AZURE_ACCOUNT_NAME}.blob.core.windows.net", credential=settings.AZURE_ACCOUNT_KEY)
+        container_client = blob_service_client.get_container_client(settings.AZURE_CONTAINER_MEDIA)
+        
+        blob_name = f"media/{filename}"
+        blob_client = container_client.get_blob_client(blob_name)
+        
+        with self.storage.open(filename, 'rb') as file:
+            blob_client.upload_blob(file, content_settings=ContentSettings(content_type=self.content_type))
+        
+        return blob_client.url
+
+    def generate_filename(self, instance, filename):
+        return self.upload_to_azure(instance, filename)
+    
+class MyAzureStorage(AzureStorage):
+    location = 'media'
+
 class identifier(models.Model):
     name=models.CharField(max_length=50)
     def __str__(self):
@@ -8,7 +30,7 @@ class identifier(models.Model):
 
 class more_image(models.Model):
     title=models.CharField(max_length=50)
-    picture=models.ImageField(upload_to='images/')
+    picture=models.ImageField(upload_to='image', storage=MyAzureStorage())
     identifier=models.ForeignKey(identifier, on_delete=models.CASCADE, null=True, blank=False)
     def __str__(self):
         return f'{self.title}'
@@ -21,7 +43,7 @@ class project(models.Model):
     categoryapp=models.CharField(max_length=50, blank=True, null=True)
     categoryweb=models.CharField(max_length=50, blank=True, null=True)
     url=models.URLField(max_length=200)
-    image=models.ImageField(upload_to='images')
+    image=models.ImageField(upload_to='image', storage=MyAzureStorage())
     pictures=models.ManyToManyField(more_image)
     def __str__(self):
         return f'{self.title}'

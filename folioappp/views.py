@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect, get_object_or_404, HttpResponse
 from .models import *
 from django.core.mail import send_mail
 from .forms import VisitorMessageForm, TestimonialForm
-from django.http import Http404, FileResponse
+from django.http import Http404, FileResponse, HttpResponseNotFound
 from django.conf import settings
 import os
 import mimetypes
@@ -89,14 +89,6 @@ def add_testimonial(request):
         form = TestimonialForm()
 
     return render(request, 'add_testimonial.html', {'form': form})
-
-#def all_testimonials(rqt):
-    testimonials = testimonial.objects.all()
-    context = {
-        'testimonials': testimonials,    
-     }
-    return render(rqt, 'all_testimonials.html', context)
-
     
 def thanks_page(request):
     return render(request, 'thanks.html')
@@ -133,3 +125,6 @@ def download_file(request, filename=''):
             return response
     else:
        return render(request, 'homepage.html')
+    
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
