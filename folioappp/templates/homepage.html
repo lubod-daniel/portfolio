@@ -1,6 +1,181 @@
 {% extends "base.html" %}
 {% load static %}
 
+{%block tit%}
+<title>Busayo's Folio | Developer</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+{%endblock%}
+
+{%block header%}
+<header id="header">
+  <div class="container">
+
+    <h1><a href="{% url 'homepage' %}">Olubode Busayo Daniel</a></h1>
+    <h2>I'm a </h2>
+    <h2><span><b> Web Application Developer.</b></span></h2>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link active" href="#header">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#resume">Resume</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+        <li><a class="nav-link" href="#testimonial">Reviews</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <div class="social-links">
+      <a href="https://t.me/Ogbenidaniel" class="telegram" target="_blank"><i class="bi bi-telegram"></i></a>
+      <a href="https://wa.me/2347069572763" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://github.com/lubod-daniel" class="github" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/olubode-busayo-aca-in-view-33440717a/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="{% url 'acc_homepage' %}" class="anotherpage" title="Accounting Professional page"><i class="bi bi-three-dots"></i></a>
+    
+    </div>
+
+  </div>
+</header><!-- End Header -->
+{%endblock%}
+
+{%block about%}
+<div class="about-me container">
+
+  <div class="section-title">
+    <h2>About</h2>
+    <p>Learn more about me</p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4" data-aos="fade-right">
+      <img src="{% static 'folio/img/dp.jpeg'%}" class="img-fluid" alt="">
+    </div>
+    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+      <h3>Professional Bio</h3>
+      <p class="fst-italic">
+        
+      </p>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>FCT Abuja, Nigeria</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>daniel-lubod@outlook.com</span></li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        Welcome! <br>
+        I'm a dynamic and dedicated web developer with a flair for crafting immersive digital experiences. With a diverse skill set that encompasses 
+        advanced SPSS knowledge, expertise in Microsoft Office and Google Suite, and a deep understanding of programming languages including Python, Django, 
+        HTML, CSS, and Bootstrap, I'm well-equipped to transform ideas into captivating web solutions. <br><br>
+
+        My journey in the digital realm began with a passion for data-driven decision-making and web designing, which gradually evolved into a fascination 
+        with the art of web development. Over the years, I've honed my talents through hands-on experience and relentless self-motivation, making me a versatile 
+        developer who thrives on bringing innovative visions to life. <br><br>
+
+        As a seasoned web developer, I specialize in both frontend and backend development. Using HTML, CSS, and Bootstrap, I craft visually stunning and 
+        user-friendly interfaces that captivate and engage users. On the backend, I harness the power of Python and Django to build robust and scalable web applications 
+        that deliver seamless experiences. <br><br>
+
+        My journey isn't just about coding, it's about collaboration and empowerment. Through my role as a tutor at Maocular Tech Expert, I've had the privilege of 
+        sharing my knowledge with aspiring developers. From Microsoft Office and Google Suite mastery to frontend and backend web development, I take pride in guiding 
+        others on their learning journey as I learn more too every day. <br><br>
+
+        My engagement as a freelance data analyst has refined my skills in data analysis, entry, and cleansing. I've leveraged tools like SPSS and Microsoft Excel to 
+        distill insights that drive informed decision-making. Beyond that, I've had the pleasure of working on personal projects that underscore my commitment to 
+        continuous growth and innovation. <br><br>
+
+        In essence, I'm a web developer who thrives on challenges, flourishes in collaborative environments, and believes in the transformative power of technology. 
+        Whether it's crafting elegant code or unraveling complex data sets, I'm driven by a fervent desire to make a lasting impact in the digital landscape. <br><br>
+
+        Let's connect, collaborate, and turn visions into reality.
+
+
+      </p>
+
+
+      <p> 
+        <h3>Objective</h3>
+        To develop a career with a reputable organization that wants to achieve excellence
+        through brilliant tasks, and dedication, and to succeed with focused result-oriented service.
+      </p>
+    </div>
+  </div>
+</div><!-- End About Me -->
+{%endblock%}
+
+{%block interests%}
+<div class="interests container">
+
+  <div class="section-title">
+    <h2>Interests</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4">
+      <div class="icon-box">
+        <i class="bi bi-airplane-engines-fill" style="color:yellow;"></i>
+        <h3>Travelling</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+      <div class="icon-box">
+        <i class="bi bi-gear-fill" style="color:blue;"></i>
+        <h3>Solving Problems</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+      <div class="icon-box">
+        <i class="bi bi-person-fill-add" style="color:red;"></i>
+        <h3>Meeting People</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+      <div class="icon-box">
+        <i class="bi bi-calculator-fill" style="color: #e361ff;"></i>
+        <h3>Maths</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4">
+      <div class="icon-box">
+        <i class="bi bi-file-earmark-plus-fill" style="color: #47aeff;"></i> 
+        <h3>Trying New Things</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4">
+      <div class="icon-box">
+        <i class="bi bi-file-music-fill" style="color: #ffa76e;"></i>
+        <h3>Music</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4">
+      <div class="icon-box">
+        <i class="bi bi-file-earmark-code-fill" style="color: #b2904f;"></i>
+        <h3>Coding and Programming</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4">
+      <div class="icon-box">
+        <i class="bi bi-person-hearts" style="color: #b20969;"></i>
+        <h3>Volunteering</h3>
+      </div>
+    </div>
+    
+  </div>
+
+</div><!-- End Interests -->
+{%endblock%}
+
+
 {%block testimonials%}
 {%endblock%}
 
@@ -45,9 +220,7 @@
           <h4>DOWNLOAD FILE</h4>
           <p>
             <ul>
-              <li><a href="{% url 'download' filename='olubode_daniel_resume_acc.pdf' %}" download class="btn btn-info">Download Resume as Accountant</a></li>
-              <li><a href="{% url 'download' filename='olubode_daniel_resume_dev.pdf' %}" download class="btn btn-info">Download Resume as Developer</a></li>
-
+              <li><a href="{% url 'download' filename='olubode_daniel_resume_dev.pdf' %}" download class="btn btn-info">Download Resume</a></li>
             </ul>
           </p>
         </div>
@@ -56,14 +229,14 @@
 
       <div class="col-lg-6">
         <h3 class="resume-title">Professional Experience</h3>
-        {%for employment in employments%}
+        {%for dev_employment in dev_employments%}
         <div class="resume-item">
-          <h4>{{ employment.designation }}</h4>
-          <h5>{{ employment.start_date }} - {{ employment.end_date }}</h5>
-          <p><em>{{ employment.employer }} - {{ employment.employer_address }}</em></p>
+          <h4>{{ dev_employment.designation }}</h4>
+          <h5>{{ dev_employment.start_date }} - {{ dev_employment.end_date }}</h5>
+          <p><em>{{ dev_employment.employer }} - {{ dev_employment.employer_address }}</em></p>
           <p>
             <ul>
-              {% for responsibility in employment.responsibility.all %}
+              {% for responsibility in dev_employment.responsibility.all %}
               <li>{{ responsibility.duty }}</li>
               {%endfor%}
             </ul>
@@ -103,7 +276,7 @@
         {%if project.categoryweb%}
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:300px; width:400px;">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="img-fluid" style="height:200px">
             <div class="portfolio-info">
               <h4>{{ project.title }}</h4>
               <p>{{ project.categoryweb }}</p>

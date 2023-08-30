@@ -1,0 +1,482 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{%block tit%}
+<title>Busayo's Folio | Accounting Professional, Data Analyt</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+{%endblock%}
+
+{%block header%}
+<header id="header">
+  <div class="container">
+
+    <h1><a href="{% url 'homepage' %}">Olubode Busayo Daniel</a></h1>
+    <h2>I'm an </h2>
+    <h2><span><b>Accounting Professional and Data Analyst. </b></span></h2>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link active" href="#header">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#resume">Resume</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <div class="social-links">
+      <a href="https://t.me/Ogbenidaniel" class="telegram" target="_blank"><i class="bi bi-telegram"></i></a>
+      <a href="https://wa.me/2347069572763" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/in/olubode-busayo-aca-in-view-33440717a/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:olubodedanielbusayo@gmail.com?subject=Hello%20There,%20"><i class="bi bi-envelope-at-fill"></i></a>
+      <a href="{% url 'homepage' %}" class="anotherpage" title="Web Developer page"><i class="bi bi-three-dots"></i></a>
+    </div>
+
+  </div>
+</header><!-- End Header -->
+{%endblock%}
+
+{%block about%}
+<div class="about-me container">
+
+  <div class="section-title">
+    <h2>About</h2>
+    <p>Learn more about me</p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4" data-aos="fade-right">
+      <img src="{% static 'folio/img/dp.jpeg'%}" class="img-fluid" alt="">
+    </div>
+    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+      <h3>Professional Bio</h3>
+      <p class="fst-italic">
+        
+      </p>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>FCT Abuja, Nigeria</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>olubodedanielbusayo@gmail.com</span></li>
+            
+          </ul>
+        </div>
+      </div>
+      <p>
+        I am a motivated and experienced accounting professional with over 5 years of experience in the industry. 
+        I have a strong understanding of accounting principles and procedures, and I am proficient in a variety of accounting softwares, 
+        also I am proficient in some programming languages such as Python, Django, HTML, CSS, and Bootstrap. I am also a skilled user of Microsoft 
+        Office Suite. I am currently a: <br><br>
+        Senior Accountant at Perfect Trust Cosmetics Limited, where I am responsible for the following: <br>
+        - Preparing financial reports, including balance sheets, income statements, and cash flow statements <br>
+        - Reconciling accounts <br>
+        - Monitoring operations <br>
+        - Analyzing financial data to identify trends and make recommendations for improvement <br>
+        - Managing budgets and tracking expenditures<br>
+        - Collaborating with other departments to ensure the smooth financial operations of the company<br><br>
+        
+        I am a student member of the Institute of Chartered Accountants of Nigeria (ICAN), and I am currently studying for my ACA qualification. <br><br>
+        I am also a certified digital marketer, and I have completed the Advance Excel Masterclass for Professional Accountants and Managers.<br><br>
+
+        I am a results-oriented individual who is always looking for new challenges. I am confident that I can make a 
+        significant contribution to any organization that I join. <br><br>
+        
+        I am also a team player who is able to collaborate effectively with others. I am always willing to help others and I am always looking for 
+        ways to improve the team's performance.<br><br>
+
+        I am confident that I have the skills and experience to be a valuable asset to any organization. <br><br>
+                
+        Thank you for your time and consideration.
+      </p>
+
+      <p> 
+        <h3>Objective</h3>
+        To develop a career with a reputable organization that wants to achieve excellence
+        through brilliant tasks, and dedication, and to succeed with focused result-oriented service.
+      </p>
+    </div>
+  </div>
+</div><!-- End About Me -->
+{%endblock%}
+
+{%block counts%}
+{%endblock%}
+
+{%block skills%}
+<div class="skills container">
+
+  <div class="section-title">
+    <h2>Skills</h2>
+  </div>
+
+  <div class="row skills-content">
+
+    <div class="col-lg-6">
+
+      <div class="progress">
+        <span class="skill">Financial Analytics<i class="val">86%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Microsoft Office / Google Suite<i class="val">85%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Cost Management<i class="val">91%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Financial Reporting<i class="val">89%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Statistical Package for the Social Sciences (SPSS)<i class="val">70%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Interpersonal Skill<i class="val">80%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col-lg-6">
+
+      <div class="progress">
+        <span class="skill">HTML <i class="val">98%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">CSS <i class="val">90%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Bootstrap<i class="val">90%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Python<i class="val">80%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <span class="skill">Django<i class="val">75%</i></span>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</div><!-- End Skills -->
+{%endblock%}
+
+{%block interests%}
+<div class="interests container">
+
+  <div class="section-title">
+    <h2>Interests</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+      <div class="icon-box">
+        <i class="bi bi-gear-fill" style="color:blue;"></i>
+        <h3>Solving Problems</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+      <div class="icon-box">
+        <i class="bi bi-person-fill-add" style="color:red;"></i>
+        <h3>Meeting People</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+      <div class="icon-box">
+        <i class="bi bi-calculator-fill" style="color: #e361ff;"></i>
+        <h3>Maths</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4">
+      <div class="icon-box">
+        <i class="bi bi-file-earmark-plus-fill" style="color: #47aeff;"></i> 
+        <h3>Trying New Things</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4">
+      <div class="icon-box">
+        <i class="bi bi-file-music-fill" style="color: #ffa76e;"></i>
+        <h3>Music</h3>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 mt-4">
+      <div class="icon-box">
+        <i class="bi bi-file-earmark-code-fill" style="color: #b2904f;"></i>
+        <h3>Coding and Programming</h3>
+      </div>
+    </div>
+    
+  </div>
+
+</div><!-- End Interests -->
+{%endblock%}
+
+
+{%block testimonials%}
+{%endblock%}
+
+{%block resume%}
+<section id="resume" class="resume">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Resume</h2>
+      <p>Check My Resume</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="resume-title">Education</h3>
+        {% for qualification in qualificatio %}
+        <div class="resume-item">
+          <h4>{{ qualification.bag }}</h4>
+          <h5>{{ qualification.year }}</h5>
+          <p><em>{{ qualification.institution }}</em></p>
+          <p>{{ qualification.about }}</p>
+        </div>
+        {%endfor%}
+        
+        <h3 class="resume-title">Professional Qualification</h3>
+        {%for professional_course in professional_cours %}
+        <div class="resume-item">
+          <h4>{{ professional_course.bag }}</h4>
+          <h5>{{ professional_course.year }}</h5>
+          <p><em>{{ professional_course.institution }}</em></p>
+          <p>
+            <ul>
+              {% for skill in professional_course.skill.all%}
+              <li>{{ skill.skill_acquired }}</li>
+              {%endfor%}
+            </ul>
+          </p>
+        </div>
+        {%endfor%}
+
+        <div class="resume-item">
+          <h4>DOWNLOAD FILE</h4>
+          <p>
+            <ul>
+              <li><a href="{% url 'download' filename='olubode_daniel_resume_acc.pdf' %}" download class="btn btn-info">Download Resume</a></li>
+
+            </ul>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+        <h3 class="resume-title">Professional Experience</h3>
+        {%for employment in employmen%}
+        <div class="resume-item">
+          <h4>{{ employment.designation }}</h4>
+          <h5>{{ employment.start_date }} - {{ employment.end_date }}</h5>
+          <p><em>{{ employment.employer }} - {{ employment.employer_address }}</em></p>
+          <p>
+            <ul>
+              {% for responsibility in employment.responsibility.all %}
+              <li>{{ responsibility.duty }}</li>
+              {%endfor%}
+            </ul>
+          </p>
+        </div>
+        {%endfor%}
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Resume Section -->
+{%endblock%}
+
+{%block services%}
+  <section id="services" class="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Services</h2>
+        <p>My Services</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-cash-coin"></i></div>
+            <h4><a href="#">Accounting Professional</a></h4>
+            <p>Accumulate and report on financial information about the performance, financial position, and cash flows of a business.
+              This information is then used to reach decisions about how to manage the business.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-zoom-in"></i></div>
+            <h4><a href="#">Internal Auditing</a></h4>
+            <p>Evaluate internal controls, including its corporate governance and accounting processes.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-bar-chart-steps"></i></div>
+            <h4><a href="#">Financial Analyses</a></h4>
+            <p>Evaluate businesses, projects, budgets, and other finance-related transactions to determine their performance and suitability.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-pie-chart-fill"></i></div>
+            <h4><a href="#">Data Analyses</a></h4>
+            <p>Collecting, cleaning, sorting, and processing raw data to extract relevant and valuable information to help businesses.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-pc-display-horizontal"></i></div>
+            <h4><a href="#">Data Entry</a></h4>
+            <p>Entering information or updating records in a database.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-browser-edge"></i></div>
+            <h4><a href="#">Web App Development</a></h4>
+            <p>Building websites and applications for the internet from scratch.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-tools"></i></div>
+            <h4><a href="#">Web Dev Maintenance</a></h4>
+            <p>Ensuring all the links on your site are working, regularly updating content, and fixing any broken links.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-house-gear-fill"></i></div>
+            <h4><a href="#">Web Hosting</a></h4>
+            <p>Renting or buying space to house a website on the World Wide Web. Website content such as HTML, 
+              CSS, and images has to be housed on a server to be viewable online.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+  {%endblock%}
+
+{%block folio%}
+{%endblock%}
+
+{%block contact%}
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Contact Me</p>
+    </div>
+
+    <div class="row mt-2">
+
+      <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+        <div class="info-box">
+          <i class="bx bx-share-alt"></i>
+          <h3>Connect with me</h3>
+          <div class="social-links">
+            <a href="https://t.me/Ogbenidaniel" class="telegram" target="_blank"><i class="bi bi-telegram"></i></a>
+            <a href="https://wa.me/2347069572763" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/olubode-busayo-aca-in-view-33440717a/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="mailto:olubodedanielbusayo@gmail.com?subject=Hello%20There,%20"><i class="bi bi-envelope-at-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-4 d-flex align-items-stretch">
+        <div class="info-box">
+          <i class="bx bx-envelope"></i>
+          <h3>Email Me</h3>
+          <!--<a href="{% url 'send_email' %}"><p>daniel-lubod@outlook.com</p></a>-->
+          <a href="mailto:daniel-lubod@outlook.com?subject=Hello%20There,%20"><p>Send me mail</p></a>
+          
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 d-flex align-items-stretch">
+        <div class="info-box">
+          <i class="bx bx-phone-call"></i>
+          <h3>Call Me</h3>
+          <a href="tel:+2347069572763"><p>+234 7069 572 763</p></a>
+        </div>
+      </div>
+    
+    <div class="col-md-6 mt-4 d-flex align-items-stretch">
+      <div class="info-box">
+        <i class="bx bx-chat"></i>
+        <h3>Message</h3>
+        <a href="{% url 'leave_message' %}" title="Click here to leave a message"><p> Leave a private message for me here</p></a>
+        
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
+{%endblock%}
+
+
+{%block testi%}
+{%endblock%}

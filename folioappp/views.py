@@ -12,6 +12,7 @@ def homepage(request):
     projects = project.objects.all()
     qualifications=qualification.objects.all()
     employments = employment.objects.all()
+    dev_employments = dev_employment.objects.all()
     professional_courses=professional_course.objects.all()
     testimonials = testimonial.objects.all()
     count=projects.count
@@ -22,9 +23,28 @@ def homepage(request):
         'employments': employments,
         'professional_courses':professional_courses,
         'testimonials': testimonials,
-        'count': count 
+        'count': count,
+        'dev_employments': dev_employments
     }
     return render(request, 'homepage.html', context)
+
+def acc_homepage(request):
+    projec = project.objects.all()
+    qualificatio=qualification.objects.all()
+    employmen = employment.objects.all()
+    dev_employmen = dev_employment.objects.all()
+    professional_cours=professional_course.objects.all()
+    testimonia = testimonial.objects.all()
+    
+    context = {
+        'projec': projec,
+        'qualificatio':qualificatio,
+        'employmen': employmen,
+        'professional_cours':professional_cours,
+        'testimonia': testimonia,
+        'dev_employmen': dev_employmen
+    }
+    return render(request, 'acc_homepage.html', context)
     
 def portfolio_details(request, project_id):
     portfolio = get_object_or_404(project, pk=project_id)

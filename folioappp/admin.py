@@ -5,6 +5,7 @@ from .models import *
 admin.site.register(project)
 admin.site.register(more_image)
 admin.site.register(employment)
+admin.site.register(dev_employment)
 admin.site.register(qualification)
 admin.site.register(professional_course)
 admin.site.register(responsibility)

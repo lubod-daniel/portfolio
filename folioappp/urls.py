@@ -5,6 +5,7 @@ from django.conf.urls import handler404
 handler404='folioappp.views.custom_404'
 urlpatterns = [
     path('', views.homepage, name='homepage'),
+    path('acc_homepage/', views.acc_homepage, name='acc_homepage'),
     path('portfolio/<int:project_id>/', views.portfolio_details, name='portfolio_details'),
     path('send_email/', views.send_email, name='send_email'),
     path('leave-message/', views.leave_message, name='leave_message'),
