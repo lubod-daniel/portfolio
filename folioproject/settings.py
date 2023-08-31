@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-2el614$y#$a1&f$s46dps!2jcqqfo4%!*216n-!vz+f9vl%e2f
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['https://busayofolio.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.render.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
