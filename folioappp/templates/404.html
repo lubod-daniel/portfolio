@@ -15,8 +15,15 @@
         <h1 class="mb-3">There's nothing here</h1>
         <p class="mb-4">Looks like you hit the wrong page. <br class="mb-5"> Go back home by clicking "Home" below.</p>
 
-        <div class="mt-5">
-            <a href="{% url 'homepage' %}"><button class="btn btn-success">Home</button></a>
+        <div>
+          <div class="mt-5">
+              <a href="{% url 'homepage' %}"><button class="btn btn-success">Home (Web Developer)</button></a>
+          </div>
+
+          <div class="mt-2">
+            <a href="{% url 'acc_homepage' %}"><button class="btn btn-success">Home (Accounting Professional)</button></a>
+          </div>
+
         </div>
 
 
