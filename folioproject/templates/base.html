@@ -12,8 +12,9 @@
   <meta content="" name="keywords">
   {%endblock%}
   
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="https://busayofolio.blob.core.windows.net/busayofolio/folio/img/pfo.image.png">
+  <!-- Favicons >
+  <link rel="icon" type="image/x-icon" href="https://busayofolio.blob.core.windows.net/busayofolio/folio/img/pfo.image.png"-->
+  <link rel="icon" type="image/x-icon" href="{% static 'folio/img/pfo.image.png'%}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -24,15 +25,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-  <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"-->
 
-  <!-- Template Main CSS File -->
-  <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/css/style.css" rel="stylesheet">
+  <link href="{% static 'folio/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'folio/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'folio/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'folio/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+  <link href="{% static 'folio/vendor/remixicon/remixicon.css'%}" rel="stylesheet">
+  <link href="{% static 'folio/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File >
+  <link href="https://busayofolio.blob.core.windows.net/busayofolio/folio/css/style.css" rel="stylesheet"-->
+  <link href="{% static 'folio/css/style.css'%}" rel="stylesheet">
 
 </head>
 
@@ -889,18 +898,26 @@
     © 2022. <a href="#">O'Daniel.</a>
   </div>
 
- <!-- JS Files -->
+ <!-- JS Files >
  <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/purecounter/purecounter_vanilla.js"></script>
  <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/glightbox/js/glightbox.min.js"></script>
  <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/isotope-layout/isotope.pkgd.min.js"></script>
  <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/swiper/swiper-bundle.min.js"></script>
  <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/waypoints/noframework.waypoints.js"></script>
- <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/php-email-form/validate.js"></script>
+ <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/vendor/php-email-form/validate.js"></script-->
 
+ <script src="{% static 'folio/vendor/purecounter/purecounter_vanilla.js'%}"></script>
+ <script src="{% static 'folio/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+ <script src="{% static 'folio/vendor/glightbox/js/glightbox.min.js'%}"></script>
+ <script src="{% static 'folio/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+ <script src="{% static 'folio/vendor/swiper/swiper-bundle.min.js'%}"></script>
+ <script src="{% static 'folio/vendor/waypoints/noframework.waypoints.js'%}"></script>
+ <script src="{% static 'folio/vendor/php-email-form/validate.js'%}"></script>
 
- <!-- Template Main JS'%} File -->
- <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/js/main.js"></script>
+ <!-- Template Main JS'%} File >
+ <script src="https://busayofolio.blob.core.windows.net/busayofolio/folio/js/main.js"></script-->
+ <script src="{% static 'folio/js/main.js'%}"></script>
 
 </body>
 

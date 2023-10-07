@@ -1,10 +1,10 @@
 from django.db import models
-from azure.storage.blob import BlobServiceClient, ContentSettings
+#from azure.storage.blob import BlobServiceClient, ContentSettings
 from django.conf import settings
-from storages.backends.azure_storage import AzureStorage
+#from storages.backends.azure_storage import AzureStorage
 
 # Create your models here.
-class AzureBlobImageField(models.ImageField):
+"""class AzureBlobImageField(models.ImageField):
     def upload_to_azure(self, instance, filename):
         blob_service_client = BlobServiceClient(account_url=f"https://{settings.AZURE_ACCOUNT_NAME}.blob.core.windows.net", credential=settings.AZURE_ACCOUNT_KEY)
         container_client = blob_service_client.get_container_client(settings.AZURE_CONTAINER_MEDIA)
@@ -44,6 +44,31 @@ class project(models.Model):
     categoryweb=models.CharField(max_length=50, blank=True, null=True)
     url=models.URLField(max_length=200)
     image=models.ImageField(upload_to='image', storage=MyAzureStorage())
+    pictures=models.ManyToManyField(more_image)
+    def __str__(self):
+        return f'{self.title}'"""
+
+class identifier(models.Model):
+    name=models.CharField(max_length=50)
+    def __str__(self):
+        return f'{self.name}'
+
+class more_image(models.Model):
+    title=models.CharField(max_length=50)
+    picture=models.ImageField(upload_to='image')
+    identifier=models.ForeignKey(identifier, on_delete=models.CASCADE, null=True, blank=False)
+    def __str__(self):
+        return f'{self.title}'
+
+class project(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.TextField()
+    identifier=models.ForeignKey(identifier, on_delete=models.CASCADE, null=True, blank=False)
+    technology=models.CharField(max_length=50,blank=True, null=True)
+    categoryapp=models.CharField(max_length=50, blank=True, null=True)
+    categoryweb=models.CharField(max_length=50, blank=True, null=True)
+    url=models.URLField(max_length=200)
+    image=models.ImageField(upload_to='image')
     pictures=models.ManyToManyField(more_image)
     def __str__(self):
         return f'{self.title}'
