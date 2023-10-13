@@ -147,4 +147,8 @@ def download_file(request, filename=''):
        return render(request, 'homepage.html')
     
 def custom_404(request, exception):
-    return render(request, '404.html', status=404)
+    previous_page = request.META.get('HTTP_REFERER', '/')
+    context={
+        'previous_page':previous_page,
+    }
+    return render(request, '404.html', context, status=404)
