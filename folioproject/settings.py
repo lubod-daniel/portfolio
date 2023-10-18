@@ -128,15 +128,16 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+"""DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')"""
 
 """AZURE_ACCOUNT_NAME = 'busayofolio'
 AZURE_ACCOUNT_KEY = 'L8NjjSOch7j9jxtH/EtIjoUlQ9rIn/pxRG8mUgTSTNSAGFzX//7fsqUyxAx40wTA9rzOJtW8+fO9+ASt0w+Q7w=='
@@ -153,3 +154,17 @@ https://busayofolio.blob.core.windows.net/busayofolio/
 
 #Media
 MEDIA_URL = f'https:/{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER_MEDIA}/'"""
+
+#AWS S3 STORAGE SET-UP
+
+AWS_ACCESS_KEY_ID = 'AKIAZPLPA36RBTAJ2AVT'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'busayofolio'
+AWS_S3_REGION_NAME = 'eu-north-1'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#AWS_QUERYSTRING_AUTH = False  # Optional, for query string authentication
+
+MEDIA_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+
+

@@ -49,7 +49,6 @@ def acc_homepage(request):
 def portfolio_details(request, project_id):
     portfolio = get_object_or_404(project, pk=project_id)
     pictures=more_image.objects.filter(identifier=portfolio.identifier)
-    pictures=more_image.objects.filter(project=portfolio)
 
     context = {'portfolio': portfolio,
                'pictures': pictures,
