@@ -14,7 +14,10 @@ from pathlib import Path
 import os
 import environs
 import dj_database_url
-from storages.backends.azure_storage import AzureStorage
+from decouple import config
+#from storages.backends.azure_storage import AzureStorage
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2el614$y#$a1&f$s46dps!2jcqqfo4%!*216n-!vz+f9vl%e2f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+DEBUG_PROPAGATE_EXCEPTIONS = True
 ALLOWED_HOSTS = ['busayofolio.onrender.com', 'localhost', '127.0.0.1']
 
 
@@ -134,10 +138,10 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-"""DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')"""
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 """AZURE_ACCOUNT_NAME = 'busayofolio'
 AZURE_ACCOUNT_KEY = 'L8NjjSOch7j9jxtH/EtIjoUlQ9rIn/pxRG8mUgTSTNSAGFzX//7fsqUyxAx40wTA9rzOJtW8+fO9+ASt0w+Q7w=='
@@ -157,14 +161,11 @@ MEDIA_URL = f'https:/{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER_MEDIA}/'"""
 
 #AWS S3 STORAGE SET-UP
 
-AWS_ACCESS_KEY_ID = 'AKIAZPLPA36RBTAJ2AVT'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'busayofolio'
+#AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+#AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+"""AWS_STORAGE_BUCKET_NAME = 'busayofolio'
 AWS_S3_REGION_NAME = 'eu-north-1'
-
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#AWS_QUERYSTRING_AUTH = False  # Optional, for query string authentication
-
-MEDIA_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-
+AWS_QUERYSTRING_AUTH = False  # Optional, for query string authentication
+MEDIA_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME"""
 
